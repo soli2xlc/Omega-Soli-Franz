@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Français – Vokabeltrainer</title>
+<style>
+:root{--bg:#fffdf5;--fg:#222;--card:#fff;--ac:#d6245a;--bl:#1a7fc4;--bd:#e3dcc4;--ok:#2e9e4f;--no:#d33;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b1b20;--fg:#eee;--card:#27272e;--bd:#3a3a44;--bl:#5ab4f0}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px system-ui,sans-serif;max-width:820px;margin:auto;padding:12px}
+h1{margin:4px 0;color:var(--ac);font-size:1.5rem}nav{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+button,select,input{font:inherit;padding:8px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg)}
+button{cursor:pointer}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.row input{flex:1;min-width:140px}
+.w{display:flex;justify-content:space-between;gap:12px;padding:8px 4px;border-bottom:1px solid var(--bd)}
+.w b{color:var(--bl)}.w span{text-align:right;opacity:.9}.w.h span{filter:blur(6px)}
+.u{color:var(--ac);margin-top:14px;font-weight:700}
+.fc{background:var(--card);border:2px solid var(--bd);border-radius:18px;min-height:190px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:1.6rem;padding:20px;cursor:pointer;margin:12px 0}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.ok{background:var(--ok)!important;color:#fff}.no{background:var(--no)!important;color:#fff}
+.sm{opacity:.7;font-size:.9rem}
+:root{--bg:#f2f7ff;--fg:#0f2347;--card:#fff;--ac:#ffc933;--bl:#1f6fe5;--bd:#d9e6fb;--ok:#1fa35c;--no:#e5484d}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0a1530;--fg:#eef4ff;--card:#13224a;--bd:#274280;--bl:#7fb2ff}}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:radial-gradient(circle at 0% -10%,rgba(31,111,229,.22),transparent 45%),radial-gradient(circle at 100% 0,rgba(255,201,51,.28),transparent 40%),var(--bg);background-attachment:fixed;padding-bottom:70px}
+h1{font-size:1.9rem;font-weight:800;letter-spacing:-.5px;background:linear-gradient(90deg,#1f6fe5,#5aa2ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+button,select,input{border-radius:999px;border:1px solid var(--bd);padding:9px 16px;transition:all .15s;box-shadow:0 1px 3px rgba(30,40,100,.08)}
+button:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(30,40,100,.15)}
+button.on{background:linear-gradient(135deg,#1f6fe5,#3d8bff);border-color:transparent;box-shadow:0 4px 14px rgba(31,111,229,.4)}
+.w{background:var(--card);border:1px solid var(--bd);border-left:6px solid var(--ac);border-radius:14px;margin:6px 0;padding:10px 14px;transition:transform .12s}
+.w:hover{transform:translateX(3px);border-color:var(--bl)}
+.w b{font-weight:600}
+.u{display:inline-block;margin-top:18px;padding:4px 14px;border-radius:999px;background:var(--ac);color:#0b2a66;font-size:.85rem;font-weight:700}
+.fc{border:none;border-radius:26px;min-height:230px;font-weight:600;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--bl),var(--ac)) border-box;border:3px solid transparent;box-shadow:0 12px 30px rgba(59,108,246,.18)}
+.opt{border-radius:16px;padding:12px 16px}
+.wm{position:fixed;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));padding:6px 14px;border-radius:999px;background:var(--card);border:1px solid var(--bd);color:var(--bl);font-weight:700;letter-spacing:1px;opacity:.75;pointer-events:none;z-index:9;font-size:.95rem}
+.wm2{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:min(22vw,150px);font-weight:900;color:var(--fg);opacity:.04;transform:rotate(-20deg);pointer-events:none;user-select:none;z-index:0}
+body>*{position:relative;z-index:1}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#1f6fe5,#ffc933);z-index:10}
+h1{background:linear-gradient(90deg,#1f6fe5,#5aa2ff,#ffc933,#5aa2ff,#1f6fe5);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% 0}}
+body::before{background-size:200% 100%;background-image:linear-gradient(90deg,#1f6fe5,#ffc933,#1f6fe5);animation:shine 4s linear infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}}
+@keyframes popIn{from{opacity:0;transform:scale(.8) rotate(-3deg)}60%{transform:scale(1.04)}}
+@keyframes flipIn{from{opacity:.2;transform:perspective(700px) rotateY(90deg)}}
+@keyframes shake{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+@keyframes pulse{50%{transform:scale(1.06)}}
+@keyframes drift{to{transform:translate(70px,-90px) scale(1.3)}}
+@keyframes boom{50%{transform:translate(var(--x),var(--y)) rotate(var(--r))}100%{transform:translate(var(--x),calc(var(--y) + 520px)) rotate(var(--r));opacity:0}}
+@keyframes sway{50%{transform:rotate(-16deg) scale(1.06)}}
+@keyframes glow{50%{box-shadow:0 0 18px 4px rgba(255,201,51,.7)}}
+#app>*{animation:fadeUp .45s backwards}
+#app>.fc{animation:popIn .5s backwards}
+#app>.fc.f{animation:flipIn .45s backwards}
+#app>.opt:nth-of-type(1){animation:fadeUp .4s .05s backwards}
+#app>.opt:nth-of-type(2){animation:fadeUp .4s .15s backwards}
+#app>.opt:nth-of-type(3){animation:fadeUp .4s .25s backwards}
+#app>.opt:nth-of-type(4){animation:fadeUp .4s .35s backwards}
+#app>.opt.ok{animation:pulse .5s}
+#app>.opt.no{animation:shake .4s}
+#r p{animation:popIn .4s}
+.u{animation:popIn .5s backwards}
+#tabs button{animation:popIn .5s backwards}
+#tabs button:nth-child(2){animation-delay:.08s}#tabs button:nth-child(3){animation-delay:.16s}#tabs button:nth-child(4){animation-delay:.24s}
+button:active{transform:scale(.93)}
+.wm{animation:glow 3s ease-in-out infinite}
+.wm2{animation:sway 9s ease-in-out infinite}
+.blob{position:fixed;border-radius:50%;filter:blur(50px);opacity:.35;z-index:0;pointer-events:none}
+.b1{width:300px;height:300px;background:#1f6fe5;left:-90px;top:20%;animation:drift 14s ease-in-out infinite alternate}
+.b2{width:260px;height:260px;background:#ffc933;right:-70px;top:55%;animation:drift 11s ease-in-out infinite alternate-reverse}
+.b3{width:200px;height:200px;background:#5aa2ff;left:40%;bottom:-70px;animation:drift 17s ease-in-out infinite alternate}
+.cf{position:fixed;width:10px;height:14px;border-radius:2px;z-index:99;pointer-events:none;animation:boom 1.1s ease-out forwards}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--bg)}
+h1{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--bl);text-shadow:3px 3px 0 var(--ac);animation:none}
+h1 span{display:inline-block;animation:wave 2.4s ease-in-out infinite;animation-delay:calc(var(--i)*70ms)}
+body::before{background:var(--ac);background-image:none;transform-origin:left;animation:stripe 3s ease-in-out infinite alternate}
+button.on{background:var(--bl);box-shadow:0 4px 14px rgba(31,111,229,.4)}
+#tabs button.on{animation:popIn .5s backwards,bob 2s .6s ease-in-out infinite}
+.fc{background:var(--card);border:3px solid var(--bl);box-shadow:9px 9px 0 var(--ac);transition:transform .2s}
+.fc:hover{transform:rotate(-1.5deg) scale(1.02)}
+.w:hover{border-left-width:16px}
+input:focus,select:focus{outline:none;border-color:var(--bl);box-shadow:0 0 0 4px rgba(31,111,229,.25);transform:scale(1.03)}
+.blob{filter:none;opacity:.13}
+.b4{width:170px;height:170px;background:none;border:16px solid var(--ac);opacity:.3;left:auto;right:10%;top:12%;animation:drift 9s ease-in-out infinite alternate}
+.b5{width:120px;height:120px;border-radius:26px;background:var(--bl);opacity:.12;left:8%;bottom:10%;animation:spin 12s linear infinite}
+@keyframes wave{0%,50%,100%{transform:translateY(0)}25%{transform:translateY(-9px) rotate(-4deg)}}
+@keyframes stripe{from{transform:scaleX(.15)}to{transform:scaleX(1)}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rise{to{transform:translateY(-115vh) rotate(var(--rot))}}
+@keyframes ripple{to{transform:scale(6);opacity:0}}
+@keyframes praiseUp{from{opacity:0;transform:translate(-50%,30px) scale(.5)}25%{opacity:1;transform:translate(-50%,0) scale(1.15)}to{opacity:0;transform:translate(-50%,-80px) scale(1)}}
+.fw{position:fixed;bottom:-50px;font-weight:800;color:var(--bl);opacity:.13;z-index:0;pointer-events:none;user-select:none;white-space:nowrap;animation:rise linear infinite}
+.rip{position:fixed;width:20px;height:20px;margin:-10px 0 0 -10px;border:3px solid var(--ac);border-radius:50%;z-index:98;pointer-events:none;animation:ripple .6s ease-out forwards}
+.praise{position:fixed;left:50%;top:40vh;font-size:2.6rem;font-weight:900;color:var(--bl);text-shadow:3px 3px 0 var(--ac);z-index:100;pointer-events:none;white-space:nowrap;animation:praiseUp 1s ease-out forwards}
+:root{--bg:#eceff3;--fg:#1f2937;--card:#fff;--ac:#8fa1b6;--bl:#3b6ea5;--bd:#d3dae3}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#151a21;--fg:#e8edf3;--card:#1f2630;--bd:#34404f;--bl:#7fa8d6;--ac:#6f829a}}
+.u{background:var(--bl);color:#fff}
+.b1{background:#3b6ea5}.b2{background:#8fa1b6}.b3{background:#6b94c2}
+button.on{box-shadow:0 4px 14px rgba(59,110,165,.4)}
+@keyframes glow{50%{box-shadow:0 0 18px 4px rgba(143,161,182,.7)}}
+a.wm{pointer-events:auto;cursor:pointer;text-decoration:none;opacity:.9;transition:transform .15s}
+a.wm:hover{transform:scale(1.1) rotate(-3deg);background:var(--bl);color:#fff}
+</style></head><body>
+<h1>🇫🇷 Français – Découvertes Vokabeltrainer</h1>
+<div class="sm">Unité 1–3 · Vokabular S. 162–171 · läuft komplett im Browser</div>
+<nav id="tabs"></nav>
+<div class="row"><select id="unit"></select><select id="dir"><option value="0">Französisch → Deutsch</option><option value="1">Deutsch → Französisch</option></select><input id="q" placeholder="Suchen…"></div>
+<div id="app"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div>
+<a class="wm" href="https://discord.gg/MgMQ2WDc5" target="_blank" rel="noopener">soli2xlc</a><div class="wm2">soli2xlc</div>
+<script>
+const RAW=`
+U1 Tu te rappelles
+la vie|das Leben
+un rêve|ein Traum
+la rentrée|der Schul(jahres)beginn
+une année|ein Jahr
+une activité|eine Freizeitbeschäftigung
+penser que|denken, dass
+important|wichtig
+intéressant|interessant
+commencer à faire qc|anfangen, etw. zu tun
+continuer à faire qc|mit etw. weitermachen
+proposer qc|etw. vorschlagen
+devoir faire qc|etw. tun müssen
+il faut faire qc|man muss etw. tun
+avoir envie de faire qc|Lust haben, etw. zu tun
+rêver de faire qc|davon träumen, etw. zu tun
+aider qn|jdm. helfen
+U1 Atelier A
+être motivé(e) (pour faire qc)|motiviert sein (etw. zu tun)
+Ça y est!|Geschafft!; Es ist so weit!
+revenir|zurückkommen (wie venir: je reviens, nous revenons, ils reviennent; je suis revenu(e))
+être de bonne humeur|gute Laune haben (↔ être de mauvaise humeur)
+un concours|ein Wettbewerb; ein Preisausschreiben
+un stage|ein Praktikum; ein Kurs
+le karaté|das Karate
+un auteur/une auteure|ein Autor/eine Autorin
+une colonie de vacances|ein Ferienlager
+la montagne|der Berg; das Gebirge
+jouer de qc|etw. spielen (ein Instrument)
+C'est parti pour …|Los geht's mit …
+un chemin|ein Weg
+une résolution|ein Beschluss; ein Vorsatz
+un choc|ein Schock; ein Aufprall
+faire un choc à qn|jdm. einen Schock versetzen
+U1 Atelier A (S. 164)
+mieux (adv.)|besser
+l'enfer (m.)|die Hölle
+créer qc|etw. gründen; etw. (er)schaffen
+un groupe|eine Band; eine Gruppe
+n'importe quoi|irgendetwas; Unsinn; Quatsch
+réaliser qc|etw. realisieren; etw. verwirklichen
+un projet|ein Projekt
+s'occuper de qn/qc|sich mit jdm./etw. beschäftigen; sich um jdn./etw. kümmern
+une annonce|eine Anzeige; eine Annonce
+changer qc|etw. ändern; etw. wechseln (wie manger: je change, nous changeons)
+motiver qn|jdn. motivieren
+partager qc|etw. teilen (wie manger: je partage, nous partageons)
+un numéro|eine Nummer; eine Ausgabe (einer Zeitschrift)
+stresser|(sich) stressen
+le bac|das Abitur (le baccalauréat)
+mentir|lügen (wie dormir: je mens, nous mentons; j'ai menti)
+rien ne …|nichts …
+personne ne …|niemand …
+enfermer qn/qc|jdn./etw. einschließen
+Tu vas aller mieux.|Es wird dir besser gehen.
+ne … personne|niemand
+U1 Atelier B/C (S. 165)
+rappeler qn/qc à qn|jdn. an jdn./etw. erinnern
+un refrain|ein Refrain
+juste|nur; bloß
+servir à qc|zu etw. nützen; zu etw. dienen (wie dormir: je sers, nous servons; j'ai servi)
+ne … pas non plus|auch nicht
+à mon avis|meiner Meinung nach
+c'est pourquoi|deshalb
+seulement|nur
+un dîner|ein Abendessen
+U1 Auf einen Blick: Verb + de + Infinitiv
+arrêter de faire qc|aufhören, etw. zu tun
+avoir envie de faire qc|Lust haben, etw. zu tun
+avoir peur de faire qc|Angst haben, etw. zu tun
+ça ne sert à rien de faire qc|es nützt nichts, etw. zu tun
+essayer de faire qc|versuchen, etw. zu tun
+finir de faire qc|etw. zu Ende machen
+oublier de faire qc|vergessen, etw. zu tun
+proposer de faire qc|vorschlagen, etw. zu tun
+rêver de faire qc|davon träumen, etw. zu tun
+risquer de faire qc|Gefahr laufen, etw. zu tun
+U1 Auf einen Blick: Verb + à + Infinitiv
+aider qn à faire qc|jdm. helfen, etw. zu tun
+s'amuser à faire qc|sich amüsieren, etw. zu tun
+apprendre à faire qc|lernen, etw. zu tun
+commencer à faire qc|anfangen, etw. zu tun
+continuer à faire qc|etw. weiter tun
+réussir à faire qc|es schaffen, etw. zu tun
+servir à faire qc|dazu dienen, etw. zu tun
+U1 Auf einen Blick: Verb + Infinitiv (ohne Präposition)
+adorer faire qc|etw. sehr gerne tun
+aimer faire qc|etw. gerne tun
+aller faire qc|etw. tun werden
+détester faire qc|etw. sehr ungern tun; hassen
+devoir faire qc|etw. tun müssen
+il faut faire qc|man muss etw. tun
+pouvoir faire qc|etw. tun können
+préférer faire qc|es lieber mögen, etw. zu tun
+savoir faire qc|etw. tun können (wissen, wie es geht)
+vouloir faire qc|etw. tun wollen
+U1 Mon dico personnel: Parler de musique
+un style|ein Stil; eine Musikrichtung
+la pop / le hip-hop / le reggae|Pop / Hip-Hop / Reggae
+le rock / l'électro (m.)|Rock / Elektro
+une mélodie|eine Melodie
+un rythme|ein Rhythmus
+la voix|die Stimme
+un album|ein Album
+faire la fête|feiern
+gai(e) / triste / drôle|fröhlich / traurig / lustig
+Elle (la chanson) parle de …|Es (das Lied) handelt von …
+U1 Mon dico personnel: Parler d'un film / d'un livre
+un genre|eine Art; ein Genre
+un film d'action / d'animation|Actionfilm / Animationsfilm
+un film fantastique / policier|Fantasyfilm / Kriminalfilm
+une comédie|eine Komödie
+un réalisateur/une réalisatrice|ein Regisseur/eine Regisseurin
+être fan de qn|Fan von jdm. sein
+la façon de raconter|die Art zu erzählen
+passionnant / touchant|fesselnd / berührend
+plein de suspense / plein d'humour|spannend / humorvoll
+un livre spécialisé|ein Sachbuch
+un roman (d'aventure, fantastique, policier)|ein Roman (Abenteuer-, Fantasy-, Kriminal-)
+une BD|ein Comic
+un dessinateur/une dessinatrice|ein Zeichner/eine Zeichnerin
+U2 Tu te rappelles
+enfin|schließlich
+ensuite|danach
+loin|weit (entfernt)
+pendant|während
+tout à coup|plötzlich
+tout de suite|sofort
+apporter qc|etw. mitbringen
+avoir l'air|aussehen
+un cours|eine Unterrichtsstunde
+croire qc|etw. glauben
+rester|bleiben
+sonner|klingeln
+U2 Atelier A (S. 167)
+un soupçon|ein Verdacht
+un livre pour la jeunesse|ein Jugendbuch
+un objet|ein Gegenstand
+un regard|ein Blick
+une coiffure|eine Frisur
+accepter qn/qc|jdn./etw. akzeptieren; annehmen
+une couverture|eine Decke; ein Umschlag
+un voleur/une voleuse|ein Dieb/eine Diebin
+un système|ein System
+la moyenne|der Durchschnitt
+rendre qc à qn|jdm. etw. zurückgeben (wie répondre: je rends, j'ai rendu)
+terminer qc|etw. beenden; etw. fertigstellen
+une route|eine (Land)Straße; eine Route
+lorsque|wenn; als
+une épaule|eine Schulter
+jaloux/jalouse de qn|eifersüchtig auf jdn.; neidisch
+une impression|ein Eindruck
+avoir l'impression|den Eindruck haben
+quelques (pl.)|einige
+avoir la pêche (fam.)|gut drauf sein (ugs.)
+U2 Atelier A (S. 168)
+africain(e)|afrikanisch
+la Côte d'Ivoire|die Elfenbeinküste
+dessiner qc|etw. zeichnen
+encourager qn|jdn. ermutigen
+un sourire|ein Lächeln
+au fond de qc|hinten in etw.; unten in etw.
+une statuette|eine Figur; eine Statuette
+disparaître|verschwinden (wie connaître: je disparais, j'ai disparu)
+toucher qn/qc|jdn./etw. berühren; anfassen
+une larme|eine Träne
+fouiller (dans) qc|etw. durchsuchen; in etw. herumkramen
+voler qc|etw. stehlen
+un principal/une principale|ein Schulleiter/eine Schulleiterin
+dehors|draußen; im Freien
+rapporter qc|etw. mitbringen
+parmi|unter
+l'Afrique (f.)|Afrika
+furieux/furieuse|wütend; zornig
+profiter de qc|etw. ausnutzen; von etw. profitieren
+une découverte|eine Entdeckung
+arriver à faire qc|es schaffen, etw. zu tun
+le lendemain|am folgenden Tag
+devenir qn/qc|jd./etw. werden
+U2 Atelier B (S. 169)
+garder qc|etw. behalten
+sinon|sonst; andernfalls
+clair(e)|hell; klar
+un casier|ein Fach; ein Schließfach
+une autorisation|eine Erlaubnis; eine Genehmigung
+une seconde|eine Sekunde
+Pour résumer un texte: Le texte raconte l'histoire de …|Der Text erzählt die Geschichte von …
+Le texte parle de …|Der Text handelt von …
+Dans la première partie … / Dans la deuxième partie …|Im ersten Teil … / Im zweiten Teil …
+A la fin …|Am Ende …
+courir|laufen; rennen (je cours, nous courons; j'ai couru)
+éclater de rire|in Gelächter ausbrechen
+pendant que|während (Konjunktion)
+une armoire|ein Schrank
+à moitié|zur Hälfte; halb
+cacher qc|etw. verstecken
+un pas|ein Schritt
+de près|aus der Nähe; von Nahem
+hésiter à faire qc|zögern, etw. zu tun
+une voix|eine Stimme
+un médicament|ein Medikament
+dénoncer qn|jdn. verraten; jdn. denunzieren
+autour de qn/qc|um jdn./etw. herum
+soupçonner qn de qc|jdn. einer Sache verdächtigen
+U2 Auf einen Blick: Histoires mystérieuses
+un vol|ein Diebstahl; ein Raub
+chaque fois que|jedes Mal, wenn
+pâle|bleich
+pardonner qc à qn|jdm. etw. verzeihen
+accuser qn|jdn. anklagen
+la police|die Polizei
+un policier/une policière|ein Polizist/eine Polizistin
+un indice|ein Indiz
+une trace de sang|eine Blutspur
+un espion/une espionne|ein Spion/eine Spionin
+un assassin|ein Mörder
+un meurtre|ein Mord
+il est mort / elle est morte|er ist tot / sie ist tot
+sentir qc|etw. spüren; etw. riechen
+lancer un regard à qn|jdm. einen Blick zuwerfen
+frapper qn|jdn. schlagen
+dire la vérité à qn|jdm. die Wahrheit sagen
+mentir à qn|jdn. belügen
+U3 Tu te rappelles
+une région|eine Region
+une gare|ein Bahnhof
+un port|ein Hafen
+un centre-ville|eine Stadtmitte
+une vieille ville|eine Altstadt
+un quartier|ein (Stadt-)Viertel
+connu(e)|bekannt
+un office de tourisme|eine Touristeninformation
+un(e) touriste|ein Tourist/eine Touristin
+visiter qc|etw. besichtigen
+faire un tour|eine Tour machen
+un trajet|eine Strecke
+une journée|ein Tag (im Verlauf)
+se réveiller|aufwachen
+travailler|arbeiten
+retourner|zurückkehren
+une carte|eine Karte
+un vendeur/une vendeuse|ein Verkäufer/eine Verkäuferin
+U3 Atelier A (S. 171)
+une frontière|eine Grenze
+belge|belgisch
+une capitale|eine Hauptstadt
+flamand(e)|flämisch
+un hôtel de ville|ein Rathaus
+un beffroi|ein Glockenturm
+une braderie|ein Trödelmarkt
+plus de|mehr als
+un visiteur/une visiteuse|ein Besucher/eine Besucherin
+un accent|ein Akzent
+un habitant/une habitante|ein Einwohner/eine Einwohnerin
+une spécialité|eine Spezialität
+un caractère|ein Charakter
+multiculturel(le)|multikulturell
+un carrefour|eine Kreuzung; ein Schnittpunkt
+l'Europe (f.)|Europa
+Bruxelles|Brüssel`;
+const W=[];let cu="";
+RAW.trim().split("\n").forEach(l=>{if(/^U\d /.test(l))cu=l;else{const[f,d]=l.split("|");W.push({f,d,u:cu})}});
+const units=[...new Set(W.map(w=>w.u))];
+const $=id=>document.getElementById(id);
+function boom(){praise();const c=["#3b6ea5","#8fa1b6","#6b94c2","#c3ced9"];for(let i=0;i<40;i++){const s=document.createElement("i");s.className="cf";s.style.cssText=`left:${50+(Math.random()-.5)*30}vw;top:45vh;background:${c[i%4]};--x:${(Math.random()-.5)*600}px;--y:${-Math.random()*350-100}px;--r:${Math.random()*720}deg`;document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}}
+const U=$("unit");U.innerHTML='<option value="">Alle Abschnitte ('+W.length+' Einträge)</option>'+units.map(u=>`<option>${u}</option>`).join("");
+let tab="list",hide=0,dir=0,pool=[],card=null,flip=0,score=[0,0],mode="mc",qa=null;
+const tabs={list:"📖 Liste",cards:"🃏 Karten",quiz:"❓ Quiz",type:"⌨️ Tippen"};
+function nav(){$("tabs").innerHTML=Object.entries(tabs).map(([k,v])=>`<button class="${k==tab?"on":""}" onclick="tab='${k}';start()">${v}</button>`).join("")}
+function filt(){const q=$("q").value.toLowerCase();return W.filter(w=>(!U.value||w.u==U.value)&&(!q||(w.f+w.d).toLowerCase().includes(q)))}
+const sh=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+const Q=w=>dir?w.d:w.f,A=w=>dir?w.f:w.d,esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function start(){dir=+$("dir").value;nav();pool=sh(filt());score=[0,0];flip=0;next(true)}
+function next(first){if(tab=="list")return list();if(!pool.length){$("app").innerHTML="<p>Keine Treffer.</p>";return}
+if(!first)pool.push(pool.shift());card=pool[0];flip=0;qa=null;draw()}
+function list(){let h=`<div class="row"><button onclick="hide=!hide;list()">${hide?"Übersetzung zeigen":"Übersetzung verdecken"}</button></div><div class="sm">${filt().length} Einträge – Klick auf Zeile zum Aufdecken</div>`,last="";
+filt().forEach((w,i)=>{if(w.u!=last){h+=`<div class="u">${w.u}</div>`;last=w.u}h+=`<div class="w ${hide?"h":""}" style="animation-delay:${Math.min(i,24)*35}ms" onclick="this.classList.toggle('h')"><b>${esc(w.f)}</b><span>${esc(w.d)}</span></div>`});$("app").innerHTML=h}
+function draw(){const w=card;let h=`<div class="sm">Punkte: ${score[0]} / ${score[0]+score[1]} · ${pool.length} Karten im Stapel</div>`;
+if(tab=="cards"){h+=`<div class="fc ${flip?'f':''}" onclick="flip=!flip;draw()">${esc(flip?A(w):Q(w))}</div><div class="row"><button onclick="rate(1)">✅ Gewusst</button><button onclick="rate(0)">❌ Nochmal</button></div>`}
+else if(tab=="quiz"){if(!qa){const o=sh([w,...sh(W.filter(x=>x!=w)).slice(0,3)]);qa=o}
+h+=`<div class="fc" style="min-height:110px;cursor:default">${esc(Q(w))}</div>`+qa.map((o,i)=>`<button class="opt" id="o${i}" onclick="pick(${i})">${esc(A(o))}</button>`).join("")}
+else{h+=`<div class="fc" style="min-height:110px;cursor:default">${esc(Q(w))}</div><div class="row"><input id="t" placeholder="Antwort…" autocomplete="off" onkeydown="if(event.key=='Enter')chk()"><button onclick="chk()">Prüfen</button></div><div id="r"></div>`}
+$("app").innerHTML=h;if($("t"))$("t").focus()}
+function rate(ok){if(ok)boom();score[ok?0:1]++;if(ok)pool.shift();else pool.push(pool.shift());if(!pool.length){$("app").innerHTML=`<h2>🎉 Geschafft!</h2><button onclick="start()">Neu starten</button>`;return}card=pool[0];flip=0;draw()}
+function pick(i){const ok=qa[i]==card;if(ok)boom();document.getElementById("o"+i).classList.add(ok?"ok":"no");if(!ok)document.getElementById("o"+qa.indexOf(card)).classList.add("ok");score[ok?0:1]++;setTimeout(()=>next(),ok?500:1400)}
+const norm=s=>s.toLowerCase().replace(/[.!?…()\/,;]/g," ").replace(/\s+/g," ").trim();
+function chk(){const v=norm($("t").value),a=norm(A(card)),ok=v&&(v==a||a.split(/ ; |; /).some(x=>norm(x)==v));if(ok)boom();score[ok?0:1]++;$("r").innerHTML=`<p class="${ok?"ok":"no"}" style="padding:10px;border-radius:10px">${ok?"✅ Richtig!":"❌ Richtig wäre: "+esc(A(card))}</p><button onclick="next()">Weiter</button>`}
+["q","unit","dir"].forEach(i=>$(i).addEventListener("input",start));
+document.querySelector("h1").innerHTML="🇫🇷 "+[..."Français – Découvertes Vokabeltrainer"].map((c,i)=>`<span style="--i:${i}">${c==" "?"&nbsp;":c}</span>`).join("");
+["bonjour","merci","la vie","un rêve","l'amitié","le chemin","Paris","Lille","un projet","salut","la rentrée","un concours"].forEach((t,i)=>{const s=document.createElement("span");s.className="fw";s.textContent=t;s.style.cssText=`left:${(i*8.5+Math.random()*4)%90}vw;font-size:${1+Math.random()*1.6}rem;animation-duration:${16+Math.random()*16}s;animation-delay:-${Math.random()*20}s;--rot:${(Math.random()-.5)*60}deg`;document.body.appendChild(s)});
+
+function praise(){const p=document.createElement("div");p.className="praise";p.textContent=["Super!","Bravo!","Genau!","Top!","Magnifique!","Parfait!","Voilà!"][Math.random()*7|0];document.body.appendChild(p);setTimeout(()=>p.remove(),1000)}
+start();
+</script></body></html>
